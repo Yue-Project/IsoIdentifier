@@ -1,17 +1,18 @@
-README
 ### Dependencies  ###
 ###################
 
 TM align -> path l.13 script RunOtherSoft.py // http://zhanglab.ccmb.med.umich.edu/TM-align/
-ShaEP -> path l.14 script RunOtherSoft.py // http://users.abo.fi/mivainio/shaep/
-- blastp
 
-Requirements (Ubuntu 12.04): 
+ShaEP -> path l.14 script RunOtherSoft.py // http://users.abo.fi/mivainio/shaep/
+
+blastp
+
+Requirements (Centos 7): 
 - openbabel
 - EMBOSS
-- R > release 3.2.2 (2015-08-14)
+- R 
 
-Python (2.7) modules:
+Python (3.6) modules:
 - os
 - copy
 - re
@@ -58,7 +59,7 @@ thresold_blast = 1e-100: threshold blast
 thresold_superimposed_pi = 2.5: distance threshold to extract LSR from ligand
 thresold_IDseq = 100: threshold identity sequence for similar PDB
 thresold_shaep = 0.2: threshold of shaep overlap
-l_ligand_out = ["AMP", "ADP", "ATP", "TTP", "DCP", "DGT", "DTP", "DUP", "ACP", "AD9", "NAD", "AGS", "UDP", "POP", "APC", "CTP", "AOV", "ANP", "GDP", "GTP", "ANP"]: list of ligand not considered
+l_ligand_out = ["AMP", "ADP", "ATP", "TTP", "DCP", "DGT", "DTP", "DUP", "ACP", "AD9", "NAD", "AGS", "U5P", "UDP","UTP","POP", "APC", "C5P","CDP","CTP", "AOV", "ANP","5GP", "GDP", "GTP", "ANP"]: list of ligand not considered
 
 ### other scripts ###
 ##################
@@ -70,7 +71,6 @@ l_ligand_out = ["AMP", "ADP", "ATP", "TTP", "DCP", "DGT", "DTP", "DUP", "ACP", "
 - histogramsRMSD.R
 - barplotQuantity.R
 - piePlot.R
-
 
 ### Paths management ###
 ########################
@@ -88,9 +88,5 @@ makeblastdb -in pdb_ncbi.fasta -out pdb -dbtype prot
 
 # 2. run query blast for test fasta
 ###################################
-blastp -query test.fasta -db pdb -out result.txt
 
-# 3. export path #
-##################
-export BLASTDB=/home/user/blast/db/
-export PATH=$PATH:/home/user/softwares/clustal
+blastp -query test.fasta -db pdb -out result.txt
