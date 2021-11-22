@@ -93,4 +93,5 @@ makeblastdb -in pdb_ncbi.fasta -out pdb -dbtype prot
 blastp -query test.fasta -db pdb -out result.txt
 # 3. run main.py
 ########################
+
 This is only code need to be run, then it will invoke other codes to automatly parse the PDB.
