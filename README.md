@@ -95,3 +95,7 @@ blastp -query test.fasta -db pdb -out result.txt
 ########################
 
 This is only code need to be run, then it will invoke other codes to automatly parse the PDB.
+
+# 4. Previous codes are referred to construct current ones.
+
+https://github.com/ABorrel/LSRs
